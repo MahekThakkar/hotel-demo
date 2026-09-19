@@ -55,28 +55,28 @@
   /* ---------- Testimonials slider ---------- */
   var testimonials = [
     {
-      quote: "We landed at Dr. Babasaheb Ambedkar Airport past midnight after a delay, and the dining room still sent up a full thali. Nobody blinked. That's the whole point of this place.",
+      quote: "We landed at midnight after a delayed flight and the dining room still sent up a full plate. Nobody blinked. That's the whole point of this place.",
       name: "Priya Nair",
       role: "Stayed in the Executive Suite",
       initial: "P"
     },
     {
-      quote: "Twenty-four rooms means the person at the desk remembers your name by the second morning. In a city like Nagpur, that kind of attention is rare.",
-      name: "Rohan Deshmukh",
+      quote: "Twenty-four rooms means the person at the desk actually remembers you by day two. Small hotel, done properly, is a different kind of luxury.",
+      name: "Daniel Cho",
       role: "Stayed in Suite 24",
-      initial: "R"
+      initial: "D"
     },
     {
-      quote: "Had an early meeting near MIHAN and the valet already had the car pulled around by 6am. I didn't ask twice — I don't think I needed to.",
-      name: "Ananya Kulkarni",
+      quote: "Booked a 6am checkout on a whim and the valet already had the car pulled around. I didn't ask twice — I don't think I needed to.",
+      name: "Marta Field",
       role: "Stayed in the Skyline Suite",
-      initial: "A"
+      initial: "M"
     },
     {
-      quote: "The rooftop at 1am on a Tuesday, half-empty, the Nagpur skyline lit up past Sitabuldi — that's the memory I keep from the trip, more than anything on the itinerary.",
-      name: "Kabir Shah",
+      quote: "The rooftop at 1am on a Tuesday, half-empty, west view lit up — that's the memory I keep from the trip, more than anything on the itinerary.",
+      name: "Owen Reyes",
       role: "Stayed in the Classic King",
-      initial: "K"
+      initial: "O"
     }
   ];
 
@@ -144,34 +144,34 @@
   }
 
   /* ---------- Gallery lightbox ---------- */
-  // var lightbox = document.getElementById("lightbox");
-  // var lightboxArt = document.getElementById("lightboxArt");
-  // var lightboxCap = document.getElementById("lightboxCap");
-  // var lightboxClose = document.getElementById("lightboxClose");
+  var lightbox = document.getElementById("lightbox");
+  var lightboxArt = document.getElementById("lightboxArt");
+  var lightboxCap = document.getElementById("lightboxCap");
+  var lightboxClose = document.getElementById("lightboxClose");
 
-  // document.querySelectorAll(".gtile").forEach(function (tile) {
-  //   tile.addEventListener("click", function () {
-  //     var svg = tile.querySelector("svg");
-  //     lightboxArt.innerHTML = svg ? svg.outerHTML : "";
-  //     lightboxCap.textContent =
-  //       (tile.getAttribute("data-title") || "") +
-  //       (tile.getAttribute("data-caption") ? " — " + tile.getAttribute("data-caption") : "");
-  //     lightbox.classList.add("is-open");
-  //     document.body.style.overflow = "hidden";
-  //   });
-  // });
+  document.querySelectorAll(".gtile").forEach(function (tile) {
+    tile.addEventListener("click", function () {
+      var svg = tile.querySelector("svg");
+      lightboxArt.innerHTML = svg ? svg.outerHTML : "";
+      lightboxCap.textContent =
+        (tile.getAttribute("data-title") || "") +
+        (tile.getAttribute("data-caption") ? " — " + tile.getAttribute("data-caption") : "");
+      lightbox.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+    });
+  });
 
-  // function closeLightbox() {
-  //   lightbox.classList.remove("is-open");
-  //   document.body.style.overflow = "";
-  // }
-  // lightboxClose.addEventListener("click", closeLightbox);
-  // lightbox.addEventListener("click", function (e) {
-  //   if (e.target === lightbox) closeLightbox();
-  // });
-  // document.addEventListener("keydown", function (e) {
-  //   if (e.key === "Escape") closeLightbox();
-  // });
+  function closeLightbox() {
+    lightbox.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+  lightboxClose.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeLightbox();
+  });
 
   /* ---------- Booking form ---------- */
   var bookingForm = document.getElementById("bookingForm");
