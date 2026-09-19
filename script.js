@@ -8,25 +8,39 @@
   var nav = document.getElementById("siteNav");
   var toTop = document.getElementById("toTop");
 
+  // function onScroll() {
+  //   var y = window.scrollY || window.pageYOffset;
+  //   if (y > 40) {
+  //     nav.classList.add("is-scrolled");
+  //   } else {
+  //     nav.classList.remove("is-scrolled");
+  //   }
+  //   if (y > 700) {
+  //     toTop.classList.add("is-visible");
+  //   } else {
+  //     toTop.classList.remove("is-visible");
+  //   }
+  // }
+
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
-    if (y > 40) {
-      nav.classList.add("is-scrolled");
-    } else {
-      nav.classList.remove("is-scrolled");
-    }
-    if (y > 700) {
-      toTop.classList.add("is-visible");
-    } else {
-      toTop.classList.remove("is-visible");
+
+    if (nav) {
+      if (y > 40) {
+        nav.classList.add("is-scrolled");
+      } else {
+        nav.classList.remove("is-scrolled");
+      }
     }
   }
+
+
   document.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  toTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  // toTop.addEventListener("click", function () {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // });
 
   /* ---------- Mobile menu ---------- */
   var burger = document.getElementById("burgerBtn");
